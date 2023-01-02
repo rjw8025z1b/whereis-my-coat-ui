@@ -1,0 +1,76 @@
+.WhosThisCoat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Whos-header {
+  height: 100px;
+}
+
+.Whos-title {
+  height: 100px;
+  font-family: "Roboto Slab", serif;
+  font-size: 48px;
+  text-size-adjust: auto;
+}
+
+.Whos-input * {
+  margin: 5px;
+  border: 0;
+  outline: 0;
+  color: rgb(60, 66, 87);
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 4px 8px;
+  vertical-align: middle;
+  transition: background-color 0.24s, box-shadow 0.24s;
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.24s, 0.24s;
+  transition-timing-function: ease, ease;
+  transition-delay: 0s, 0s;
+}
+.Whos-input *:focus {
+  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(58 151 212 / 36%) 0px 0px 0px 4px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+}
+.Whos-button {
+  width: 90px;
+  height: 35px;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  padding: 0 16px;
+  background-color: #0070d2;
+  border-radius: 0.25rem;
+  border: 1px solid #0070d2;
+  color: #fff;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: center;
+}
+.Whos-select {
+  width: 150px;
+  height: 35px;
+}
+.Whos-file {
+  width: 200px;
+}
+
+.Whos-city {
+  height: 25px;
+}
+.Whos-button:hover {
+  background-color: #005fb2;
+  border-color: #005fb2;
+}
