@@ -1,18 +1,44 @@
 import { useState } from 'react';
 import './WhereIsCoat.css';
-import results from '../../result'
 
 function WhereIsCoat() {
   const [showResults, setShowResults] = useState({
-    showFields: false
+    showFields: false,
   })
+
+  const [results, setResults] = useState([])
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const target = event.target;
     console.log(target.name, target.value)
+    fetch('http://127.0.0.1:8000/data/new_item', {
+         method: 'POST',
+         body: JSON.stringify({
+            id: "1",
+            photo: "/path",
+            date: "2022-12-12",
+            city: "Krakow",
+            thing: "coat"
+         }),
+      headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+            'Access-Control-Allow-Origin': '*'
+          },
+      })
+         .then((res) => res.json())
+         .then((data) => {
+            console.log(data)
+            setResults(data);
+         })
+         .catch((err) => {
+          console.log('ERROR!!!')
+            console.log(err.message);
+         });
     setShowResults({ showFields: true });
   }
+
+ 
 
   return (
     <div className="WhereIsCoat">
@@ -42,7 +68,7 @@ function WhereIsCoat() {
             <th>Thing</th>
           </tr>
           {results.map(element => {
-            return <tr>
+            return <tr key={element.id}>
               <td>{element.photo}</td>
               <td>{element.city}</td>
               <td>{element.date}</td>
